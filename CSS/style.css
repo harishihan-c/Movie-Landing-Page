@@ -16,15 +16,17 @@ body{
     background-color: black;
 }
 
+
 header{
     position:absolute;
     top:0;
     left:0;
     width:100%;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     padding:10px 60px;
     align-items: center;
+    z-index:10;
 }
 
 .nav{
@@ -87,4 +89,104 @@ header{
     left:10px;
     padding-right:10px;
     border-right: 1px solid #ffffff;
+}
+
+
+.banner{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    padding:0 20px;
+    justify-content:space-between;
+    align-items: center;
+    color:#ffffff;
+    background-size: cover;
+    background: url('../Images/Fight Club.png') no-repeat left;
+    overflow:hidden;
+    transition: 0.5s;
+}
+
+.banner::before{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    content:'';
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.container{
+    position:relative;
+    max-width:550px;
+    display:none;
+    /*visibility: hidden;*/
+    transform: scale(0);
+    transition: 0.3s;
+}
+
+.container.active{
+    display:block;
+    /*visibility: visible;*/
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.Movie-Title{
+    max-width: 250px;
+}
+
+.banner .container ul{
+    display:flex;
+    font-weight:400;
+    font-size:24px;
+}
+
+.banner .container ul li{
+    list-style: none;
+    padding:0 10px;
+    border-right: 1px solid rgba(255,255,255,0.5);
+
+}
+
+.banner .container ul li:first-child{
+    padding-left:0;
+}
+
+.banner .container ul li:last-child{
+    border-right:none;
+}
+
+.banner .container ul li i{
+    background: rgb(246, 34, 110);
+    border-radius:2px;
+    padding:0 8px;
+}
+
+.banner .container p{
+    font-weight:300;
+    font-size:1em;
+    line-height:1.5em;
+    margin: 10px 0 20px;
+}
+
+.banner .container button{
+    position:relative;
+}
+
+.banner .container .button .play, .myList{
+    border:none;
+    outline:none;
+    color:#ffffff;
+    background-color: #f6226e;
+    margin-right:10px;
+    padding:6px 20px;
+    font-weight:500;
+    letter-spacing:1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor:pointer;
 }
