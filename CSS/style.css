@@ -23,22 +23,23 @@ header{
     left:0;
     width:100%;
     display:flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding:10px 60px;
     align-items: center;
     z-index:10;
 }
 
-.nav{
+header .nav{
     display:flex;
+
 }
 
-.nav li{
+header .nav li{
     list-style: none;
     margin: 0 10px;
 }
 
-.nav li a {
+header .nav li a {
     text-decoration: none;
     color:#ffffff;
     letter-spacing:1px;
@@ -47,62 +48,65 @@ header{
     transition: 0.3s;
 }
 
-.nav li:hover a{
+header .nav li:hover a{
     color: #f6226e;
 }
 
-.logo{
+header .logo{
     font-size: 35px;
     font-weight: 400;
     text-decoration:none;
     color:#ffffff;
 }
 
-.search{
+header .search{
     position: relative;
-    width:300px;
+    width:200px;
     height:35px;
 }
 
-.search input{
-    width:100%;
-    height:100%;
+header .search input{
+    box-sizing:border-box !important;
     position: absolute;
     left:0;
     top:0;
+    width:100% !important;
+    height:100% !important;
     background:transparent;
-    border-radius:4px;
-    padding: 0 10px 0 45px;
-    backdrop-filter: blur(10px);
-    color:#ffffff;
+    border-radius:4px !important ;
+    padding: 0 10px 0 45px !important;
+    backdrop-filter: blur(10px) !important;
+    /*border: 1px solid rgba(255, 255, 255, 0.22) !important ;*/
+    outline: none !important;
 }
 
-.search input::placeholder{
+header .search input::placeholder{
     color: #ffffff;
 }
 
-.search i{
-    position:absolute;
+header .search i{
+    position:absolute !important;
     color:#ffffff;
-    top:50%;
-    transform:translateY(-50%);
+    top:50% !important;
+    transform:translateY(-50%) !important;
     left:10px;
     padding-right:10px;
     border-right: 1px solid #ffffff;
 }
 
 
+/*Banner*/
 .banner{
     position:relative;
-    width:100%;
+    width:100% !important;
     min-height:100vh;
     display:flex;
     padding:0 20px;
-    justify-content:space-between;
-    align-items: center;
+    align-items: center !important;
+    justify-content: space-around;
     color:#ffffff;
     background-size: cover;
-    background: url('../Images/Fight Club.png') no-repeat left;
+    background: url('../Images/Background/Fight Club.png') no-repeat left;
     overflow:hidden;
     transition: 0.5s;
 }
@@ -119,9 +123,12 @@ header{
     background: rgba(0, 0, 0, 0.5);
 }
 
+/*Container of banner*/
 .container{
-    position:relative;
-    max-width:550px;
+    position:relative !important;
+    width:550px ;
+    /*max-width:550px;*/
+    margin:0;
     display:none;
     /*visibility: hidden;*/
     transform: scale(0);
@@ -142,7 +149,8 @@ header{
 .banner .container ul{
     display:flex;
     font-weight:400;
-    font-size:24px;
+    font-size:20px;
+    margin-top:20px;
 }
 
 .banner .container ul li{
@@ -173,11 +181,12 @@ header{
     margin: 10px 0 20px;
 }
 
-.banner .container button{
-    position:relative;
+.banner .container .button{
+    position:relative !important;
 }
 
 .banner .container .button .play, .myList{
+    position:relative;
     border:none;
     outline:none;
     color:#ffffff;
@@ -189,4 +198,60 @@ header{
     text-transform: uppercase;
     transition: 0.3s;
     cursor:pointer;
+}
+/*End of Container*/
+
+
+/*Carousel of Banner*/
+.banner .carousel-box {
+    position: relative;
+    width: 500px;
+    /*height: 300px !important;*/
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 20px 20px 50px rgba(129, 129, 129, 0.5) !important;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    overflow: hidden;
+}
+
+.carousel{
+    position:relative;
+    height:350px;
+    perspective: 500px;
+}
+
+.carousel .carousel-item{
+    cursor:pointer;
+}
+
+.carousel .carousel-item img{
+    /*max-width:235px;*/
+    position:absolute;
+    top:50%;
+    border-radius:10px;
+    object-fit: cover;
+    object-position: center;
+    transform: translateY(-50%);
+}
+
+.play-button{
+    position:absolute;
+    bottom:20px;
+    left:65px;
+    color:#ffffff;
+}
+
+.scm{
+    position:absolute;
+    bottom:20px;
+    right:70px;
+    font-size:20px;
+}
+
+.scm a{
+    color:#ffffff;
 }
